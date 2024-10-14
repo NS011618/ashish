@@ -18,14 +18,14 @@ const Header = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
     >
-      <nav className="container mx-auto flex justify-between items-center py-4 px-4">
+      <nav className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
         {/* Logo */}
         <div className="text-2xl font-bold text-gray-800 dark:text-white">
           <a href="/">Ashish Golla</a>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden sm:flex space-x-8 text-lg font-medium">
+        <div className="hidden md:flex space-x-8 text-lg font-medium">
           <a href="#skills" className="hover:text-blue-600 dark:hover:text-blue-400 flex items-center text-gray-700 dark:text-gray-300">
             <FaLaptopCode className="mr-2" /> Skills
           </a>
@@ -41,7 +41,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="sm:hidden">
+        <div className="md:hidden">
           <button onClick={toggleMenu} className="focus:outline-none text-gray-700 dark:text-gray-300">
             {isOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
           </button>
@@ -56,38 +56,38 @@ const Header = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <motion.div
-          className="sm:hidden flex flex-col items-center bg-white dark:bg-gray-900 shadow-md"
+          className="md:hidden flex flex-col items-center bg-white dark:bg-gray-900 shadow-md fixed inset-0 top-16 z-40"
           initial={{ height: 0 }}
-          animate={{ height: "auto" }}
+          animate={{ height: "100%" }}
           transition={{ duration: 0.3 }}
         >
           <a
             href="#skills"
-            className="py-2 w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+            className="py-4 w-full text-center border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center"
             onClick={toggleMenu}
           >
-            <FaLaptopCode className="mr-2" /> Skills
+            <FaLaptopCode className="mr-2 text-xl" /> Skills
           </a>
           <a
             href="#projects"
-            className="py-2 w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+            className="py-4 w-full text-center border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center"
             onClick={toggleMenu}
           >
-            <FaProjectDiagram className="mr-2" /> Projects
+            <FaProjectDiagram className="mr-2 text-xl" /> Projects
           </a>
           <a
             href="#experience"
-            className="py-2 w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+            className="py-4 w-full text-center border-b border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center"
             onClick={toggleMenu}
           >
-            <FaBriefcase className="mr-2" /> Experience
+            <FaBriefcase className="mr-2 text-xl" /> Experience
           </a>
           <a
             href="#contact"
-            className="py-2 w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300"
+            className="py-4 w-full text-center hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center justify-center"
             onClick={toggleMenu}
           >
-            <FaEnvelope className="mr-2" /> Contact
+            <FaEnvelope className="mr-2 text-xl" /> Contact
           </a>
         </motion.div>
       )}
