@@ -21,7 +21,7 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
         {/* Logo */}
         <div className="text-2xl font-bold text-gray-800 dark:text-white">
-          <a href="/">Ashish Golla</a>
+          <a href="/ashish">Ashish Golla</a>
         </div>
 
         {/* Desktop Menu */}
